@@ -1,9 +1,9 @@
 class ItemToPurchase:
-	# Initialize the item with given name, price and quantity
-	def __init__(self, name="none", price=0.0, quantity=0):
-		self.item_name = name
-		self.item_price = price
-		self.item_quantity = quantity
+	# Initialize the item with default values
+	def __init__(self):
+		self.item_name = "none"
+		self.item_price = 0.0
+		self.item_quantity = 0
         
 	# calculate and print the cost of the item by multiplying quantity and price	
 	def print_item_cost(self):
@@ -36,17 +36,17 @@ def main():
 
 	# Get details from user for item 1
 	print("Item 1")
-	item1_name = input("Enter the item name:\n")
-	item1_price = validate_price("Enter the item price:\n")
-	item1_quantity = validate_quantity("Enter the item quantity:\n")
-	item1 = ItemToPurchase(item1_name, item1_price, item1_quantity)
-    
+	item1 = ItemToPurchase()
+	item1.item_name = input("Enter the item name:\n")
+	item1.item_price = validate_price("Enter the item price:\n")
+	item1.item_quantity = validate_quantity("Enter the item quantity:\n")
+	    
 	# Get details from user for item 2
 	print("\nItem 2")
-	item2_name = input("Enter the item name:\n")
-	item2_price = validate_price("Enter the item price:\n")
-	item2_quantity = validate_quantity("Enter the item quantity:\n")
-	item2 = ItemToPurchase(item2_name, item2_price, item2_quantity)
+	item2 = ItemToPurchase()
+	item2.item_name = input("Enter the item name:\n")
+	item2.item_price = validate_price("Enter the item price:\n")
+	item2.item_quantity = validate_quantity("Enter the item quantity:\n")	
 
 	# Output individual item costs
 	print("\nTOTAL COST")
